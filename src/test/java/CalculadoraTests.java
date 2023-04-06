@@ -33,8 +33,22 @@ public class CalculadoraTests {
     @Test
     @DisplayName("Funcionamiento correcto de la multiplicacion")
     public void multiplicacionResultadoCorrecto(){
-        int resultadoReal = calculadora.suma(3, 4);
-        Assertions.assertEquals(7, resultadoReal);
+        int resultadoReal = calculadora.multiplicacion(3, 4);
+        Assertions.assertEquals(12, resultadoReal);
+    }
+
+    @Test
+    @DisplayName("Funcionamiento correcto de la division")
+    public void divisionResultadoCorrecto(){
+        int resultadoReal = calculadora.divisionEntera(9, 4);
+        Assertions.assertEquals(2, resultadoReal);
+    }
+
+    @Test
+    @DisplayName("Funcionamiento correcto del resto de division")
+    public void restoDivisionResultadoCorrecto(){
+        int resultadoReal = calculadora.restoDivision(9, 4);
+        Assertions.assertEquals(1, resultadoReal);
     }
 
     @Test
