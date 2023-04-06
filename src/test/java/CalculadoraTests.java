@@ -52,6 +52,34 @@ public class CalculadoraTests {
     }
 
     @Test
+    @DisplayName("El resultado de la suma no es nulo")
+    public void sumaResultNotNull(){
+        boolean resultadoReal = calculadora.isNull(calculadora.suma(3, 4));
+        Assertions.assertFalse(resultadoReal);
+    }
+
+    @Test
+    @DisplayName("El resultado de la suma es nulo")
+    public void sumaResultNull(){
+        boolean resultadoReal = calculadora.isNull(calculadora.suma(-4, 4));
+        Assertions.assertTrue(resultadoReal);
+    }
+
+    @Test
+    @DisplayName("El resultado de la resta no es nulo")
+    public void restaResultNotNull(){
+        boolean resultadoReal = calculadora.isNull(calculadora.resta(3, 4));
+        Assertions.assertFalse(resultadoReal);
+    }
+
+    @Test
+    @DisplayName("El resultado de la resta es nulo")
+    public void restaResultNull(){
+        boolean resultadoReal = calculadora.isNull(calculadora.resta(4, 4));
+        Assertions.assertTrue(resultadoReal);
+    }
+
+    @Test
     @DisplayName("El resultado de la multiplicación no es nulo")
     public void multiplicacionResultNotNull(){
         boolean resultadoReal = calculadora.isNull(calculadora.multiplicacion(3, 4));
@@ -64,5 +92,34 @@ public class CalculadoraTests {
         boolean resultadoReal = calculadora.isNull(calculadora.multiplicacion(0, 4));
         Assertions.assertTrue(resultadoReal);
     }
+
+    @Test
+    @DisplayName("El resultado de la division no es nulo")
+    public void divisionResultNotNull(){
+        boolean resultadoReal = calculadora.isNull(calculadora.divisionEntera(5, 4));
+        Assertions.assertFalse(resultadoReal);
+    }
+
+    @Test
+    @DisplayName("El resultado de la division es nulo")
+    public void divisionResultNull(){
+        boolean resultadoReal = calculadora.isNull(calculadora.divisionEntera(0, 4));
+        Assertions.assertTrue(resultadoReal);
+    }
+
+    @Test
+    @DisplayName("El resultado del resto de division no es nulo")
+    public void restoDivisionResultNotNull(){
+        boolean resultadoReal = calculadora.isNull(calculadora.restoDivision(6, 4));
+        Assertions.assertFalse(resultadoReal);
+    }
+
+    @Test
+    @DisplayName("El resultado del resto de division es nulo")
+    public void restoDivisionResultNull(){
+        boolean resultadoReal = calculadora.isNull(calculadora.restoDivision(8, 4));
+        Assertions.assertTrue(resultadoReal);
+    }
+
 
 }
