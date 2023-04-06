@@ -9,18 +9,32 @@ public class CalculadoraTests {
     Calculadora calculadora = new Calculadora();
 
     @Test
-    @DisplayName("Funcionamiento correcto de la multiplicación")
-    public void multiplicacionResultadoCorrecto(){
+    @DisplayName("Funcionamiento correcto de la suma")
+    public void sumaResultadoCorrecto(){
         //Arrange
         int numero1 = 3;
         int numero2 = 4;
-        int resultadoEsperado = 12;
+        int resultadoEsperado = 7;
 
         //Act
-        int resultadoReal = calculadora.multiplicacion(numero1,numero2);
+        int resultadoReal = calculadora.suma(numero1,numero2);
 
         //Assert
         Assertions.assertEquals(resultadoEsperado, resultadoReal);
+    }
+
+    @Test
+    @DisplayName("Funcionamiento correcto de la resta")
+    public void restaResultadoCorrecto(){
+        int resultadoReal = calculadora.suma(3, 4);
+        Assertions.assertEquals(7, resultadoReal);
+    }
+
+    @Test
+    @DisplayName("Funcionamiento correcto de la multiplicacion")
+    public void multiplicacionResultadoCorrecto(){
+        int resultadoReal = calculadora.suma(3, 4);
+        Assertions.assertEquals(7, resultadoReal);
     }
 
     @Test
